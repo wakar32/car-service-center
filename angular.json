@@ -55,8 +55,37 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            },
+            "testing": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.testing.ts"
+                }
+              ]
+            },
+            "staging": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ]
             }
+            
           },
           "defaultConfiguration": "production"
         },
@@ -68,6 +97,12 @@
             },
             "development": {
               "buildTarget": "car-service-center:build:development"
+            },
+            "staging": {
+              "buildTarget": "car-service-center:build:staging"
+            },
+            "testing": {
+              "buildTarget": "car-service-center:build:testing"
             }
           },
           "defaultConfiguration": "development"
